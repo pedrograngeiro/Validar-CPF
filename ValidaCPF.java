@@ -3,7 +3,11 @@
 
 public class ValidaCPF {
   public static boolean valida(String cpf) {
-    cpf = cpf.replace(".", "").replace("-", "");
+    cpf = cpf.replace(".", "")
+        .replace("-", "")
+        .replace("/", "")
+        .replace(" ", "")
+        .replace(",", "");
     if (cpf.length() != 11) {
       return false;
     }
